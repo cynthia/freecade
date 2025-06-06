@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #0f172a;
+    overflow: hidden;
+}
+
+#app {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Apply portrait orientation forcing on mobile */
+@media (max-width: 768px) {
+    #app {
+        align-items: flex-start;
+    }
+}

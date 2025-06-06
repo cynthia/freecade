@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="/style.css">
+    <title>Match Three Game</title>
+  <script type="module" crossorigin src="/assets/index-uzM6cieq.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="game-container"></div>
+    </div>
+    
+    <!-- iOS Audio Workaround -->
+    <audio id="audio-workaround" src="assets/audio/card-flip.mp3" preload="auto"></audio>
+    
+    <script>
+        // iOS audio workaround
+        document.addEventListener('touchstart', function() {
+            const audio = document.getElementById('audio-workaround');
+            audio.play().then(() => {
+                audio.pause();
+                audio.currentTime = 0;
+            }).catch(e => console.log('Audio play failed: ', e));
+        }, { once: true });
+    </script>
+    
+</body>
+</html>
